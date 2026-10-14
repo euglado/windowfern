@@ -1,0 +1,28 @@
+{
+  "name": "windowfern",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Discord bot that finds a shared availability window without publishing individual schedules.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "build": "tsc",
+    "start": "node scripts/launch.mjs start",
+    "register": "node scripts/launch.mjs register",
+    "test": "npm run build && node --test test/domain.test.mjs test/store.test.mjs test/handler.test.mjs test/runtime.test.mjs",
+    "lint": "biome check .",
+    "check": "npm test && npm run lint && node scripts/supply.mjs"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}
